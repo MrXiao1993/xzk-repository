@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:component-scan base-package="com.xzk.spring"/>
+    <!--在spring中配置quartz-->
+    <!--计划作业scheduledJob-->
+    <!--A：MethodInvokingJobDetailFactoryBean,当你在特定的bean只要调用一个方法。这是两种中的最简单的-->
+    <bean id="simpleJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="myBean"/>
+        <property name="targetMethod" value="printMessage"/>
+    </bean>
+
+    <!--B:JobDetailFactoryBean,当您需要更高级的设置，需要将数据传递给工作-->
+    <bean id="complexJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <!--jobClas指向一个继承QuartzJobBean的实现类，executeInternal实现该方法-->
+        <property name="jobClass" value="com.xzk.spring.quartz.ScheduledJob"/>
+        <!--<property name="group" value="group233"/>-->
+        <!--<property name="name" value="jobName"/>-->
+        <!--传递数据Bean，提供给ScheduledJob调用-->
+        <!--<property name="jobDataMap">-->
+            <!--<map>-->
+                <!--<entry key="anotherBean" value-ref="anotherBean"/>-->
+            <!--</map>-->
+        <!--</property>-->
+        <property name="durability" value="true"/>
+    </bean>
+
+    <!--触发器：触发决定何时调度运行计划作业的时间-->
+    <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="simpleJobDetail"/>
+        <property name="startDelay" value="1000"/>
+        <property name="repeatInterval" value="2000"/>
+    </bean>
+
+    <!-- Run the job every 5 seconds only on Weekends -->
+    <!--<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+        <!--<property name="jobDetail" ref="complexJobDetail"/>-->
+        <!--<property name="cronExpression" value="0/5 * * ? * MON-FRI"/>-->
+    <!--</bean>-->
+
+    <!-- Scheduler factory bean to glue together jobDetails and triggers to Configure Quartz Scheduler -->
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="applicationContextSchedulerContextKey" value="applicationContextKey"/>
+
+    </bean>
+</beans>
