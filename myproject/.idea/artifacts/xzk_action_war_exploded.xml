@@ -1,18 +1,15 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="xzk-action:war exploded">
-    <output-path>$PROJECT_DIR$/xzk-action/target/xzk-action</output-path>
+    <output-path>$PROJECT_DIR$/xzk-action/target/xzk-action-0.0.2-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="xzk-action" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="xzk-entity-0.0.2-SNAPSHOT.jar">
-            <element id="module-output" name="xzk-entity" />
+          <element id="archive" name="xzk-dao-0.0.2-SNAPSHOT.jar">
+            <element id="module-output" name="xzk-dao" />
           </element>
-          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
-          <element id="library" level="project" name="Maven: junit:junit:4.11" />
-          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.7.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.7.RELEASE" />
@@ -35,10 +32,6 @@
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.41" />
-          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.1" />
-          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.7.0" />
-          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2" />
-          <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.3" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.7" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.3" />
@@ -63,14 +56,16 @@
           <element id="library" level="project" name="Maven: com.danga:java-memcached:2.5.1" />
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
-          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:1.0.2.RELEASE" />
-          <element id="library" level="project" name="Maven: redis.clients:jedis:2.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0" />
-          <element id="library" level="project" name="Maven: com.java:auth-jwt:3.3.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
+          <element id="archive" name="xzk-service-0.0.2-SNAPSHOT.jar">
+            <element id="module-output" name="xzk-service" />
+          </element>
+          <element id="library" level="project" name="Maven: junit:junit:4.11" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/xzk-action/target/xzk-action/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/xzk-action/target/xzk-action-0.0.2-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="xzk-action/web/Web" />
     </root>

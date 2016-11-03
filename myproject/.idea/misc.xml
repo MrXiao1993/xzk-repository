@@ -5,6 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/xzk-action" />
+    <file type="web" url="file://$PROJECT_DIR$/xzk-service" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

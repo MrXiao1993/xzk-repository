@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="xzk-action:war">
     <output-path>$PROJECT_DIR$/xzk-action/target</output-path>
-    <root id="archive" name="xzk-action.war">
+    <root id="archive" name="xzk-action-0.0.2-SNAPSHOT.war">
       <element id="artifact" artifact-name="xzk-action:war exploded" />
     </root>
   </artifact>
