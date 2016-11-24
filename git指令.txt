@@ -1,0 +1,6 @@
+提交
+    1.git add xxxName
+    2.git commit -m "注释"
+下载开源项目
+    git clone github的SSH地址或HTTP地址
+git@github.com:kartik-v/bootstrap-fileinput.git

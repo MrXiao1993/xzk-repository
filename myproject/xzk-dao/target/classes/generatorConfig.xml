@@ -5,6 +5,8 @@
        <context id="ec.user" targetRuntime="MyBatis3">
               <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"></plugin>
               <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+              <!--<plugin type="com.busybird.common.PaginationPlugin" ></plugin>-->
+              <plugin type="com.xzk.plugin.PaginationPlugin"></plugin>
               <commentGenerator>
                      <property name="suppressDate" value="true" />
                      <property name="suppressAllComments" value="true" />
@@ -25,7 +27,7 @@
               </javaClientGenerator>
 
                <!--生成表-->
-              <table tableName="user">
+              <table tableName="user_account">
                      <generatedKey column="user_id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true"/>
               </table>
               <!--<table tableName="jq_gy_alliance_detail_record"/>-->

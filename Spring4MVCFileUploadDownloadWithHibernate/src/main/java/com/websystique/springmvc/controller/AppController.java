@@ -55,10 +55,13 @@ public class AppController {
 	 * This method will list all existing users.
 	 */
 	@RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
-	public String listUsers(ModelMap model) {
+	public String listUsers(ModelMap model, Locale locale) {
 
 		List<User> users = userService.findAllUsers();
 		model.addAttribute("users", users);
+
+		String val = messageSource.getMessage("global.list", null, locale);
+		System.out.println(val);
 		return "userslist";
 	}
 

@@ -28,7 +28,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="xzk-action" />
         <module name="xzk-service" />
       </profile>
       <profile default="false" name="Annotation profile for xzk-dao" enabled="true">
@@ -38,13 +37,21 @@
         <processorPath useClasspath="true" />
         <module name="xzk-dao" />
       </profile>
+      <profile default="false" name="Annotation profile for xzk-action" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="xzk-action" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="xzk-action" target="1.5" />
+      <module name="xzk-action" target="1.6" />
       <module name="xzk-dao" target="1.6" />
       <module name="xzk-entity" target="1.6" />
       <module name="xzk-new" target="1.5" />
       <module name="xzk-service" target="1.5" />
+      <module name="xzk-util" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
